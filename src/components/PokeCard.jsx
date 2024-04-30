@@ -1,7 +1,17 @@
-export default function PokeCard() {
+
+
+export default function PokeCard({ pokemon }) {
+
+    
     return (
         <>
-        <h2>Pokemon cards</h2>
+            {pokemon.map(poke => 
+                <article key={poke.id}>
+                    <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${poke.id}.png`} alt="" />
+                    <h3>{poke.name}</h3>
+                    <span># {poke.id}</span>
+                </article>
+            )}
         </>
     )
 }
