@@ -1,0 +1,20 @@
+export const types = [
+    { name:'normal', img:'normal.png', className:'normalType'},
+    { name:'fighting', img:'fighting.png', className:'fightingType'},
+    { name:'flying', img:'flying.png', className:'flyingType'},
+    { name:'poison', img:'poison.png', className:'poisonType'},
+    { name:'ground', img:'ground.png', className:'groundType'},
+    { name:'rock', img:'rock.png', className:'rockType'},
+    { name:'bug', img:'bug.png', className:'bugType'},
+    { name:'ghost', img:'ghost.png', className:'ghostType'},
+    { name:'steel', img:'steel.png', className:'steelType'},
+    { name:'fire', img:'fire.png', className:'fireType'},
+    { name:'water', img:'water.png', className:'waterType'},
+    { name:'grass', img:'grass.png', className:'grassType'},
+    { name:'electric', img:'electric.png', className:'electricType'},
+    { name:'psychic', img:'psychic.png', className:'psychicType'},
+    { name:'ice', img:'ice.png', className:'iceType'},
+    { name:'dragon', img:'dragon.png', className:'dragonType'},
+    { name:'dark', img:'dark.png', className:'darkType'},
+    { name:'fairy', img:'fairy.png', className:'fairyType'}
+]

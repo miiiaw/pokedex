@@ -1,5 +1,4 @@
 @import 'header';
-@import "homePage";
 @import "pokemonPage";
 @import "teamsPage";
 @import "pokemonCards";
@@ -20,7 +19,11 @@ body{
         main{
             margin: 20px 0px 0px 0px;
             padding: 10px;
-            width: 80%;
+            width: 90%;
+            h1{
+                font-size: 1.6rem;
+                text-transform: uppercase;
+            }
         }
     }
 }

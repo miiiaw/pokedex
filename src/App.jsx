@@ -7,47 +7,34 @@ import Pokemon from './components/Pokemon'
 import Teams from './components/Teams'
 import SearchResult from './components/SearchResult'
 
+//The use of Promise.all to run multiple asyncs
 
 function App() {
 
   const [pokemon, setPokemon] = useState([])
-  const [searchString, setSearch] = useState("")
 
-
-
+  useEffect(() => {
   const getPokemon = async() => {
-      let URL = "https://pokeapi.co/api/v2/pokemon?limit=9"
 
       try{
-          const response = await fetch(URL)
+          const response = await fetch("https://pokeapi.co/api/v2/pokemon?limit=9")
           const data = await response.json()
-          data.results.forEach(pokemon => {
-            getPokemonDetails(pokemon)
-          })
-
+          const pokemonDetails = await Promise.all(
+            data.results.map(pokemon => 
+              fetch(pokemon.url)
+              .then(response => 
+              response.json())
+            )
+          )
+          setPokemon(pokemonDetails)
       } catch (error) {
           console.error("Something went wrong. Again.", error)
       }
   }
-
-
-  async function getPokemonDetails(pokemonDetails){
-    let URL = pokemonDetails.url
-
-    try{
-      const response = await fetch(URL)
-      const data = await response.json()
-      setPokemon(prevPokemon => [...prevPokemon, data])
-    } catch (error) {
-      console.error("PenguinPoop.", error)
-  }
-  }
+  getPokemon()
+}, [])
 
 console.log(pokemon)
-
-useEffect(() => {
-  getPokemon();
-}, [])
 
 
   return (
