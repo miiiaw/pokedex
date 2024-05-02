@@ -5,7 +5,10 @@ export default function Pokemon({ pokemon }) {
     // Storing the slug in a variable and logging it
     const {pokemonId} = useParams()
     console.log(pokemonId)
-
+    // Array for Ability facts
+    const [abilityNames, setAbilityNames] = useState([])
+    // Array for Ability facts
+    const [abilityFacts, setAbilityFacts] = useState([])
     // Filtered array of the Pokemon
     const [pokemonDetails, setPokemonDetails] = useState([])
     // Filtering through the Pokemon-array and store the specified Pokemon in PokemonDetails.
@@ -14,31 +17,44 @@ export default function Pokemon({ pokemon }) {
         setPokemonDetails(filteredPokemon)
     }, [pokemonId, pokemon])
 
-    console.log(pokemonDetails)
+    // Nytt API kall for å hente informasjon om abilities
+    useEffect(() => {
+        pokemonDetails.map(pokemon => {
+            pokemon.abilities.map(async (ability) => {
+                const response = await fetch(ability.ability.url)
+                const data = await response.json()
+                setAbilityNames(data)
+                setAbilityFacts(data.effect_entries)
+            })
+        })
+    }, [pokemonDetails])
 
+    console.log(abilityFacts)
+    console.log(abilityNames)
 
     return (
         <>
         {pokemonDetails.map(pokemon => (
-            <section id="pokemonDetails" key={pokemon.id}>
-                <h1>{pokemon.name}</h1>
-                <article>
-                    <h2>Stats</h2>
-                </article>
-                <article>
-                    <h2>Abilities</h2>
-                    {pokemon.abilities.map((ability, abilityIndex) => (
-                    <h3 key={abilityIndex}>
-                        {ability.ability.name}
-                    </h3>
-                    ))}
-                </article>
-            </section>
-        ))}
-        <section>
-        <h2>HeiiS</h2>
+        <article key={pokemon.id}>
+            <h1>{pokemon.name}</h1>
 
-        </section>
+            {pokemon.abilities.map((ability, i) => (
+            <h3 key={i}>
+                {ability.ability.name}
+            </h3>
+            
+
+            ))}
+        </article>
+        ))}
+        
+        {abilityFacts.map((ability, index) => (
+            <article key={index}>
+                <p>Effect: {ability.effect}</p>
+                <p>Short effect: {ability.short_effect}</p>
+            </article>
+            ))}
+
         </>
     )
 }

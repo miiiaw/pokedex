@@ -34,7 +34,6 @@ function App() {
   getPokemon()
 }, [])
 
-console.log(pokemon)
 
 
   return (
