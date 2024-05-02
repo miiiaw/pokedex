@@ -42,7 +42,7 @@ console.log(pokemon)
     <Layout >
       <Routes>
         <Route element={<Home pokemon={pokemon} />} path='/' exact />
-        <Route element={<Pokemon pokemon={pokemon} />} path='/pokemons/:pokemonName' />
+        <Route element={<Pokemon pokemon={pokemon} />} path='/pokemons/:pokemonId' />
         <Route element={<Teams />} path='/Teams' />
         <Route element={<SearchResult />} path='/searchresult/:pokemon' />
       </Routes>
