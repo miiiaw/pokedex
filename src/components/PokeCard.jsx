@@ -7,7 +7,7 @@ export default function PokeCard({ poke }) {
         <>
         <Link to={`/pokemons/${poke.id}`} >
         <article>
-            <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${poke.id}.png`} alt="" />
+            <img src={poke.sprites.front_default} alt="" />
             <h3>{poke.name}</h3>
             <span># {poke.id}</span>
         </article>

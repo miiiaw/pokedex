@@ -1,0 +1,57 @@
+body{
+    #container{
+        main{
+
+            .pokemonDetails{
+                display: flex;
+                flex-direction: row;
+                justify-content: space-evenly;
+                img{
+                    margin: 6px;
+                    width: 40%;
+                    height: 40%;
+                    border-radius: 12px;
+                }
+                .test{
+                    margin: 6px;
+                    width: 60%;
+                    .stats{
+                        h2{
+                            font-size: 1.1rem;
+                            text-transform: uppercase;
+                        }
+                        table{
+                            width: 100%;
+                            tbody{
+                                tr{
+                                    font-size: 0.8rem;
+                                    .statName{
+                                        color: rgb(104, 104, 104);
+                                        float: left;
+                                    }
+                                    .statValue{
+                                        font-weight: bold;
+                                        float: right;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .abilityDetails{
+                width: 100%;
+                h2{
+                    font-size: 1.1rem;
+                    text-transform: uppercase;
+                    article{
+                        h3{
+                            font-size: 0.8rem;
+                            text-transform: lowercase;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

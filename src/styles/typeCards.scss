@@ -1,97 +1,97 @@
 
 body{
-    #container{
-        main{
-            .typeCards{
-                margin: 20px 0px 0px 0px;
-                width: 100%;
-                display: flex;
-                flex-direction: row;
-                flex-wrap: wrap;
-                justify-content: center;
-                h2{
-                    width: 100%;
-                    text-transform: uppercase;
-                    font-size: 1.1rem;
-                }
-                .types{
-                    margin: 15px;
-                    padding: 5px;
-                    width: 30%;
-                    height: auto;
-                    border-radius: 6px;
-                    display: flex;
-                    flex-direction: row;
-                    align-items: center;
-                    justify-content: flex-start;
-                    img{
-                        margin: 5px;
-                        width: 20%;
-                        height: auto;
-                    }
-                    h3{
-                        margin: 5px;
-                        text-transform: capitalize;
-                    }
-                }
-                .normalType{
-                    background-color: #dce1e6;
-                  }
-                  .fightingType{
-                    background-color: #f0c3d0;
-                  }
-                  .flyingType{
-                    background-color: #dce4f4;
-                  }
-                  .poisonType{
-                    background-color: #e6caf2;
-                  }
-                  .groundType{
-                    background-color: #f2c8b4;
-                  }
-                  .rockType{
-                    background-color: #f7eed4;
-                  }
-                  .bugType{
-                    background-color: #eaf4d3;
-                  }
-                  .ghostType{
-                    background-color: #d0d9f4;
-                  }
-                  .steelType{
-                    background-color: #d4edf7;
-                  }
-                  .fireType{
-                    background-color: #f4d5bf;
-                  }
-                  .waterType{
-                    background-color: #cbe1f9;
-                  }
-                  .grassType{
-                    background-color: #cdf9c8;
-                  }
-                  .electricType{
-                    background-color: #f4eab8;
-                  }
-                  .psychicType{
-                    background-color: #f2c2c4;
-                  }
-                  .iceType{
-                    background-color: #d6f9f3;
-                  }
-                  .dragonType{
-                    background-color: #c6dff4;
-                  }
-                  .darkType{
-                    background-color: #d3cae3;
-                  }
-                  .fairyType{
-                    background-color: #f9dbf6;
-                  }
-                  .unknown, .shadow{
-                    visibility: hidden;
-                  }
-            }
+  #container{
+    main{
+      .typeCards{
+        margin: 20px 0px 0px 0px;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        h2{
+          width: 100%;
+          text-transform: uppercase;
+          font-size: 1.1rem;
         }
+        .types{
+          margin: 15px;
+          padding: 5px;
+          width: 30%;
+          height: auto;
+          border-radius: 6px;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: flex-start;
+          img{
+            margin: 5px;
+            width: 20%;
+            height: auto;
+          }
+          h3{
+            margin: 5px;
+            text-transform: capitalize;
+          }
+        }
+      }
     }
+  }
+  .normalType{
+    background-color: #dce1e6;
+  }
+  .fightingType{
+    background-color: #f0c3d0;
+  }
+  .flyingType{
+    background-color: #dce4f4;
+  }
+  .poisonType{
+    background-color: #e6caf2;
+  }
+  .groundType{
+    background-color: #f2c8b4;
+  }
+  .rockType{
+    background-color: #f7eed4;
+  }
+  .bugType{
+    background-color: #eaf4d3;
+  }
+  .ghostType{
+    background-color: #d0d9f4;
+  }
+  .steelType{
+    background-color: #d4edf7;
+  }
+  .fireType{
+    background-color: #f4d5bf;
+  }
+  .waterType{
+    background-color: #cbe1f9;
+  }
+  .grassType{
+    background-color: #cdf9c8;
+  }
+  .electricType{
+    background-color: #f4eab8;
+  }
+  .psychicType{
+    background-color: #f2c2c4;
+  }
+  .iceType{
+    background-color: #d6f9f3;
+  }
+  .dragonType{
+    background-color: #c6dff4;
+  }
+  .darkType{
+    background-color: #d3cae3;
+  }
+  .fairyType{
+    background-color: #f9dbf6;
+  }
+  .unknown, .shadow{
+    visibility: hidden;
+  }
 }
