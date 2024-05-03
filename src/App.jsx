@@ -6,6 +6,7 @@ import Home from './components/Home'
 import Pokemon from './components/Pokemon'
 import Teams from './components/Teams'
 import SearchResult from './components/SearchResult'
+import Type from './components/Type'
 
 //The use of Promise.all to run multiple asyncs
 
@@ -34,7 +35,7 @@ function App() {
   getPokemon()
 }, [])
 
-
+console.log(pokemon)
 
   return (
     <>
@@ -42,6 +43,7 @@ function App() {
       <Routes>
         <Route element={<Home pokemon={pokemon} />} path='/' exact />
         <Route element={<Pokemon pokemon={pokemon} />} path='/pokemons/:pokemonId' />
+        <Route element={<Type pokemon={pokemon} />} path='/:type' />
         <Route element={<Teams />} path='/Teams' />
         <Route element={<SearchResult />} path='/searchresult/:pokemon' />
       </Routes>
