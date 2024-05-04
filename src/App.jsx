@@ -1,10 +1,12 @@
 import { Route, Routes } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import './styles/main.scss'
+import { sanityClient } from './sanity/client'
 import Layout from './components/Layout'
 import Home from './components/Home'
 import Pokemon from './components/Pokemon'
 import Teams from './components/Teams'
+import Team from './components/Team'
 import SearchResult from './components/SearchResult'
 import Type from './components/Type'
 
@@ -12,11 +14,14 @@ import Type from './components/Type'
 
 function App() {
 
+  //Array of pokemons
   const [pokemon, setPokemon] = useState([])
+
+  //Array for Sanity content
+  const [teamsData, setTeamsData] = useState([])
 
   useEffect(() => {
   const getPokemon = async() => {
-
       try{
           const response = await fetch("https://pokeapi.co/api/v2/pokemon?limit=9")
           const data = await response.json()
@@ -31,11 +36,32 @@ function App() {
       } catch (error) {
           console.error("Something went wrong. Again.", error)
       }
-  }
-  getPokemon()
-}, [])
+    }
+    getPokemon()
+  }, [])
 
-console.log(pokemon)
+  //Fetching the Sanity-content
+  //Kan flyttes til Sanity Services-mappe. Se projects-fil for annen struktur.
+  async function fetchData() {
+      const data = await sanityClient.fetch(`*[_type == "team"]{
+        title,
+        slug,
+        pokemon,
+        teamImage{
+          asset->{
+            _id,
+            url
+          },
+        alt
+        }
+      }`)
+      setTeamsData(data)
+   }
+
+  useEffect(() => {
+      fetchData()
+  }, [])
+
 
   return (
     <>
@@ -44,7 +70,8 @@ console.log(pokemon)
         <Route element={<Home pokemon={pokemon} />} path='/' exact />
         <Route element={<Pokemon pokemon={pokemon} />} path='/pokemons/:pokemonId' />
         <Route element={<Type pokemon={pokemon} />} path='/:type' />
-        <Route element={<Teams />} path='/Teams' />
+        <Route element={<Teams teamsData={teamsData} />} path='/teams' />
+        <Route element={<Team pokemon={pokemon} teamsData={teamsData} />} path='/teams/:team' />
         <Route element={<SearchResult />} path='/searchresult/:pokemon' />
       </Routes>
     </Layout>
