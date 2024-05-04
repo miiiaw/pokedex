@@ -14,24 +14,35 @@ body{
           text-transform: uppercase;
           font-size: 1.1rem;
         }
-        .types{
+        a{
           margin: 15px;
-          padding: 5px;
-          width: 30%;
+          padding: 0px;
+          width: 40%;
           height: auto;
           border-radius: 6px;
           display: flex;
           flex-direction: row;
           align-items: center;
           justify-content: flex-start;
-          img{
-            margin: 5px;
-            width: 20%;
-            height: auto;
-          }
-          h3{
-            margin: 5px;
-            text-transform: capitalize;
+          color: #111111;
+          text-decoration: none;
+          .types{
+            padding: 5px;
+            width: 100%;
+            border-radius: 6px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-start;
+            img{
+              margin: 5px;
+              width: 20%;
+              height: auto;
+            }
+            h3{
+              margin: 5px;
+              text-transform: capitalize;
+            }
           }
         }
       }
