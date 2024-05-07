@@ -15,7 +15,7 @@ export default function Team({ teamsData, pokemon }) {
         setTeamInfo(teamsData.filter(t => t.title === team))
     }, [team, teamsData])
 
-    //Filtering pokemons
+    //Filtering pokemons REMEMBER .includes() and if-test.
     useEffect(() => {
         if (teamInfo.length > 0 && teamInfo[0].pokemon && pokemon) {
             setTeamPokemon(pokemon.filter(poke => teamInfo[0].pokemon.includes(poke.name)

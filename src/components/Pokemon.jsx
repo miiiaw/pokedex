@@ -4,7 +4,7 @@ import { types } from '../assets/types'
 import TypeCard from "./TypeCard"
 
 export default function Pokemon({ pokemon }) {
-    // Storing the slug in a variable and logging it
+    // Storing the slug in a variable
     const {pokemonId} = useParams()
     // Filtered array of the Pokemon
     const [pokemonDetails, setPokemonDetails] = useState([])
@@ -36,7 +36,7 @@ export default function Pokemon({ pokemon }) {
         aURL.push(abilities.ability.url)
     ))
 
-    // New API call to fetch ability details
+    // New API call to fetch ability details REMEMBER promise.all
     useEffect(() => {
         const getAbilityDetails = async () => {
           try {

@@ -1,7 +1,6 @@
 import { useParams } from "react-router-dom"
 import { useEffect, useState } from "react"
 import PokeCard from "./PokeCard"
-import { types } from '../assets/types'
 
 
 export default function Type({ pokemon }) {
