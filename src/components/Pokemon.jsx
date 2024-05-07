@@ -61,7 +61,7 @@ export default function Pokemon({ pokemon }) {
         <h1>{pokemonDetails[0]?.name}</h1>
         <section className="pokemonDetails">
           
-          <img src={pokemonDetails[0]?.sprites.front_default} alt="" className={pokemonTypes[0]?.className} />
+          <img src={pokemonDetails[0]?.sprites.front_default} alt="" className={pokemonTypes[0]?.className} aria-label={`A picture of the Pokemon`}/>
           
           <div className="shortsContainer">
           <section className="typeCards">

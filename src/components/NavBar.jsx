@@ -18,20 +18,23 @@ export default function NavBar() {
         { path: '/teams', name: 'Teams' },
     ]
 
+
     return (
         <>
         <header>
             <nav>
-                <span className="pageLogo"><Link to='/'>UIN Pokedex</Link></span>
+                <span className="pageLogo"><Link to='/' aria-label="UIN Pokedex">UIN Pokedex</Link></span>
                 <ul>
                     {links.map(link => (
-                        <li key={link.path}><Link to={link.path}>{link.name}</Link></li>
+                        <li key={link.path}><Link to={link.path} aria-label={link.name}>{link.name}</Link></li>
                     ))}
                 </ul>
 
                 <form onSubmit={handleSubmit}>
-                    <input type="text" id="searchBox" placeholder="search here..." value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)}></input>
-                    <input type="submit" id="searchButton" value="OK"></input>
+                    <input type="text" id="searchBox" placeholder="search here..." aria-label="Type your search here" value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)}></input>
+                    <button type="submit" id="searchButton" aria-label="Click to search">
+                        <img src="/images/glass.png" alt="Search" aria-label="Magnifying glass for the search button"/>
+                    </button>
                 </form>
             </nav>
         </header>

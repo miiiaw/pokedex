@@ -11,6 +11,8 @@ body{
                 flex-direction: row;
                 flex-wrap: wrap;
                 justify-content: space-evenly;
+                align-items: baseline;
+                align-content: baseline;
                 .pageLogo{
                     margin: 0px;
                     padding: 3px;
@@ -53,10 +55,15 @@ body{
                     }
                 }
                 form{
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    width: 250px;
                     #searchBox{
                         margin: 2px;
                         padding: 6px;
-                        width: 70%;
+                        width: 180px;
+                        height: 20px;
                         border: 1px solid #b9b9b9;
                         border-radius: 6px;
                         outline: none;
@@ -65,10 +72,12 @@ body{
                     #searchButton{
                         margin: 2px;
                         padding: 6px;
-                        background-color: #3d3d3d;
-                        color: #ffffff;
                         border: none;
                         border-radius: 6px;
+                        cursor: pointer;
+                        img{
+                            width: 20px;
+                        }
                     }
                 }
             }
