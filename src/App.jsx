@@ -10,7 +10,8 @@ import Team from './components/Team'
 import SearchResult from './components/SearchResult'
 import Type from './components/Type'
 
-//The use of Promise.all to run multiple asyncs
+//The use of Promise.all to run multiple asyncs, REMEMBER
+//map() in a fetch
 
 function App() {
 
@@ -23,7 +24,7 @@ function App() {
   useEffect(() => {
   const getPokemon = async() => {
       try{
-          const response = await fetch("https://pokeapi.co/api/v2/pokemon?limit=9")
+          const response = await fetch("https://pokeapi.co/api/v2/pokemon?limit=151")
           const data = await response.json()
           const pokemonDetails = await Promise.all(
             data.results.map(pokemon => 
@@ -40,8 +41,7 @@ function App() {
     getPokemon()
   }, [])
 
-  //Fetching the Sanity-content
-  //Kan flyttes til Sanity Services-mappe. Se projects-fil for annen struktur.
+  //Fetching the Sanity-content. Must be put in the useEffect, this is messy.
   async function fetchData() {
       const data = await sanityClient.fetch(`*[_type == "team"]{
         title,
@@ -72,7 +72,7 @@ function App() {
         <Route element={<Type pokemon={pokemon} />} path='/:type' />
         <Route element={<Teams teamsData={teamsData} />} path='/teams' />
         <Route element={<Team pokemon={pokemon} teamsData={teamsData} />} path='/teams/:team' />
-        <Route element={<SearchResult />} path='/searchresult/:pokemon' />
+        <Route element={<SearchResult pokemon={pokemon} />} path='/searchresult/:query' />
       </Routes>
     </Layout>
     </>

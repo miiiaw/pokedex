@@ -6,25 +6,61 @@
 
 body{
     margin: 0px;
+    padding: 0px;
     background-color: #ffffff;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 14px;
+    max-width: 550px;
+    p{
+        margin: 10px;
+    }
+    h1{
+        margin: 10px;
+        font-size: 1.4rem;
+        text-transform: uppercase;
+        max-width: 100%;
+        width: 100%;
+    }
+    h2{
+        margin: 10px;
+        font-size: 1.1rem;
+        text-transform: uppercase;
+        max-width: 100%;
+        width: 100%;
+    }
+    h3{
+        margin: 10px;
+        font-size: 0.9rem;
+        text-transform: capitalize;
+    }
     #container{
         margin: 0px;
-        padding: 0px;
-        width: 100%;
+        padding: 5px;
+        max-width: 100%;
         display: flex;
         flex-direction: column;
-        align-items: center;
+        justify-content: center;
         main{
-            margin: 20px 0px 0px 0px;
-            padding: 10px;
-            width: 90%;
-            h1{
-                font-size: 1.6rem;
-                text-transform: uppercase;
-                width: 100%;
-            }
+            max-width: 100%;
+        }
+    }
+}
+
+
+/* --- DESKTOP --- */
+@media only screen and (min-width: 550px) {
+    body{
+        margin: 0 auto;
+        max-width: 1200px;
+        font-size: 16px;
+        h1{
+        font-size: 1.6rem;
+        }
+        h2{
+        font-size: 1.4rem;
+        }
+        h3{
+        font-size: 1.2rem;
         }
     }
 }

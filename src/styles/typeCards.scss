@@ -3,21 +3,16 @@ body{
   #container{
     main{
       .typeCards{
-        margin: 20px 0px 0px 0px;
-        width: 100%;
+        margin-top: 10px;
+        max-width: 100%;
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;
-        h2{
-          width: 100%;
-          text-transform: uppercase;
-          font-size: 1.1rem;
-        }
         a{
-          margin: 15px;
-          padding: 0px;
-          width: 40%;
+          margin: 8px;
+          padding: 3px;
+          width: 35%;
           height: auto;
           border-radius: 6px;
           display: flex;
@@ -27,7 +22,6 @@ body{
           color: #111111;
           text-decoration: none;
           .types{
-            padding: 5px;
             width: 100%;
             border-radius: 6px;
             display: flex;
@@ -36,12 +30,8 @@ body{
             justify-content: flex-start;
             img{
               margin: 5px;
-              width: 20%;
+              width: 30%;
               height: auto;
-            }
-            h3{
-              margin: 5px;
-              text-transform: capitalize;
             }
           }
         }
@@ -104,5 +94,27 @@ body{
   }
   .unknown, .shadow{
     visibility: hidden;
+  }
+}
+
+/* --- DESKTOP --- */
+@media only screen and (min-width: 550px) {
+  body{
+    #container{
+      main{
+        .typeCards{
+          a{
+            width: 25%;
+            .types{
+              width: 100%;
+              img{
+                width: 30%;
+                height: auto;
+              }
+            }
+          }
+        }
+      }
+    }
   }
 }

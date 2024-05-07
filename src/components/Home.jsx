@@ -7,7 +7,7 @@ export default function Home({ pokemon }) {
         <>
         <h1>Main Pokemons</h1>
         <section className="pokeCards">
-            {pokemon.map(poke => <PokeCard key={poke.id} poke={poke} /> )}
+            {pokemon?.slice(0, 9).map(poke => <PokeCard key={poke.id} poke={poke} /> )}
         </section>
 
         <section className="typeCards">

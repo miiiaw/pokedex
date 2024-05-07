@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom"
 import { useEffect, useState } from "react"
 import PokeCard from "./PokeCard"
+import { types } from '../assets/types'
 
 
 export default function Type({ pokemon }) {
@@ -30,8 +31,7 @@ export default function Type({ pokemon }) {
   useEffect(() => {
     setSortedPokemon(pokemon.filter(poke => pokemonTypes.includes(poke.name)))
   }, [pokemon, pokemonTypes])
-
-
+  
 
 
     return (

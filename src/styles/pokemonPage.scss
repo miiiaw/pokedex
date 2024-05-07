@@ -1,25 +1,21 @@
 body{
     #container{
         main{
-
             .pokemonDetails{
+                padding: 10px;
                 display: flex;
-                flex-direction: row;
-                justify-content: space-evenly;
+                flex-direction: column;
+                justify-content: center;
+                max-width: 100%;
                 img{
-                    margin: 6px;
-                    width: 40%;
-                    height: 40%;
+                    width: 50%;
+                    height: 50%;
                     border-radius: 12px;
                 }
-                .test{
-                    margin: 6px;
-                    width: 60%;
+                .shortsContainer{
+                    max-width: 100%;
                     .stats{
-                        h2{
-                            font-size: 1.1rem;
-                            text-transform: uppercase;
-                        }
+                        max-width: 100%;
                         table{
                             width: 100%;
                             tbody{
@@ -54,4 +50,47 @@ body{
             }
         }
     }
+}
+
+/* --- DESKTOP --- */
+@media only screen and (min-width: 550px) {
+body {
+    #container{
+        main{
+            .pokemonDetails{
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: space-evenly;
+                width: 100%;
+                img{
+                    max-width: 30%;
+                    width: 30%;
+                    height: 30%;
+                }
+                .shortsContainer{
+                    max-width: 50%;
+                    width: 50%;
+                    .stats{
+                        max-width: 100%;
+                        table{
+                            width: 10%0;
+                        }
+                    }
+                }
+            }
+            .abilityDetails{
+                width: 100%;
+                h2{
+                    font-size: 1.3rem;
+                    article{
+                        h3{
+                            font-size: 0.9rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
 }

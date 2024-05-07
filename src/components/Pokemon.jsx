@@ -63,7 +63,7 @@ export default function Pokemon({ pokemon }) {
           
           <img src={pokemonDetails[0]?.sprites.front_default} alt="" className={pokemonTypes[0]?.className} />
           
-          <div className="test">
+          <div className="shortsContainer">
           <section className="typeCards">
             <h2>Type(s)</h2>
             {pokemonTypes.map(type => 
